@@ -6,7 +6,8 @@ def cam():
     while(True):
         # converts the ImageGrab image (800x600) and turns it into a numpy array
         printscreen =  np.array(ImageGrab.grab(bbox=(1321,409,2122,1005)))
-        
+        printscreen = cv2.resize(printscreen, (160, 120))
+
         # shows the frame but converts it into a grayscaled image
         cv2.imshow('Frame', cv2.cvtColor(printscreen, cv2.COLOR_BGR2GRAY))
 
